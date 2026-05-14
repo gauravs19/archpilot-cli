@@ -1,0 +1,31 @@
+{
+  "name": "archpilot-cli",
+  "version": "1.0.0",
+  "description": "Archpilot CLI — Scaffold enterprise architecture documents locally",
+  "keywords": ["architecture", "cli", "enterprise", "sdd", "lld", "hld", "adr", "ears"],
+  "author": "Gaurav Sharma",
+  "license": "MIT",
+  "homepage": "https://gauravs19.github.io/archpilot/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauravs19/archpilot.git"
+  },
+  "type": "commonjs",
+  "bin": {
+    "archpilot": "./bin/archpilot.js"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "node bin/archpilot.js",
+    "test": "node bin/archpilot.js --help"
+  },
+  "dependencies": {
+    "chalk": "4.1.2",
+    "commander": "^12.1.0",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
