@@ -1,46 +1,107 @@
-# Archpilot CLI
+Ôªø<div align="center">
+  <h1>üèõÔ∏è Archpilot CLI</h1>
+  <p><strong>From "Vibe Coding" to Verifiable Engineering.</strong><br>Scaffold production-grade enterprise architecture documents, enforce Spec-Driven Development, and eliminate AI hallucinations right from your terminal.</p>
+  
+  <p>
+    <a href="https://gauravs19.github.io/archpilot/"><img src="https://img.shields.io/badge/Documentation-Live-blue.svg" alt="Documentation" /></a>
+    <a href="https://github.com/gauravs19/archpilot-cli/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+    <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-%3E%3D16.0.0-brightgreen.svg" alt="Node Version" /></a>
+  </p>
+</div>
 
-> A command-line tool to instantly scaffold enterprise architecture documents using the Archpilot Standards Library.
+---
 
-## Installation
+## ‚ö° Why Archpilot CLI?
 
-\\\ash
-# Install globally (if published to npm)
-npm install -g archpilot-cli
+When using LLMs (Claude, GitHub Copilot, AWS Kiro, Cursor) for software architecture, providing unstructured prompts leads to generic, junior-level output.
 
-# Or clone and link locally
+**Archpilot CLI** solves this by scaffolding highly structured **Spec-Kit** templates. It forces the workflow into 4 phases:
+1. **Specify:** EARS-compliant requirements (`requirements.md`)
+2. **Plan:** Component and data design (`design.md`)
+3. **Task:** Atomic implementation steps (`tasks.md`)
+4. **Govern:** Project constitution & boundaries (`constitution.md`)
+
+When you feed these structured artifacts back into an LLM, it operates at a **Senior Enterprise Architect** level.
+
+---
+
+## üöÄ Installation
+
+Install globally using `npm` to use the `archpilot` command anywhere:
+
+```bash
+# Clone the repository
 git clone https://github.com/gauravs19/archpilot-cli.git
+
+# Navigate and install
 cd archpilot-cli
 npm install
+
+# Link globally
 npm link
-\\\
+```
 
-## Commands
+---
 
-### \rchpilot init\
-Initializes Archpilot in your current project. Creates a \.archpilot/config.json\ and a \.specs/\ directory.
+## üõ†Ô∏è Usage & Commands
 
-### \rchpilot new <type>\
-Scaffolds a new architecture document from production-grade templates.
-**Supported types:**
-- \spec\ ó Requirements Specification (EARS notation)
-- \design\ ó Design Specification
-- \	asks\ ó Atomic Task List
-- \constitution\ ó Project Constitution
-- \lld\ ó Low-Level Design
-- \hld\ ó High-Level Design
-- \dr\ ó Architecture Decision Record
-- \contract\ ó Data Contract
-- \unbook\ ó Service Runbook
-- \postmortem\ ó Blameless Post-Mortem
+### `archpilot init`
+Initializes Archpilot in your current repository. Creates the `.archpilot` configuration folder and a `.specs` directory to house your architecture artifacts.
+```bash
+archpilot init
+```
 
-### \rchpilot list\
-Lists all available document templates.
+### `archpilot new <type>`
+Instantly scaffolds a markdown template. If you don't specify a type, an interactive menu will guide you.
+```bash
+archpilot new spec --name "Payment Gateway"
+archpilot new hld --name "Order Processing Engine"
+```
 
-### \rchpilot check [file]\
-Validates your architecture documents against Archpilot rules (EARS syntax, NFRs, etc).
+**Available Templates:**
+| Category | Command | Description |
+|----------|---------|-------------|
+| **Spec-Kit** | `spec` | Requirements using EARS syntax |
+| **Spec-Kit** | `design` | Component, API, and Data modeling |
+| **Spec-Kit** | `tasks` | Atomic tasks with Acceptance Criteria |
+| **Spec-Kit** | `constitution`| Hard constraints and AI Agent boundaries |
+| **Design** | `hld` | High-Level Design (Context, Containers) |
+| **Design** | `lld` | Low-Level Design (Sequence, DB schemas) |
+| **Design** | `adr` | Architecture Decision Record |
+| **Design** | `sdd` | Solution Design Document |
+| **Data** | `contract` | Producer/Consumer Data Contract |
+| **Ops** | `runbook` | Incident Response & Runbook |
+| **Ops** | `postmortem` | Blameless Incident Post-Mortem |
 
-## Methodology
-This CLI enforces **Spec-Driven Development (SDD)**, preventing AI architectural hallucinations by shifting from "vibe coding" to verifiable, spec-driven engineering.
+### `archpilot list`
+Displays a clean, categorized list of all available templates you can scaffold.
 
-See the full standards library: [Archpilot on GitHub](https://github.com/gauravs19/archpilot)
+### `archpilot check [file]`
+Validates a generated document to ensure it meets Archpilot standards (e.g., checks for proper EARS notation, measurable NFR targets, and missing security sections).
+```bash
+archpilot check .specs/payment-gateway-spec.md
+```
+
+### `archpilot rules [query]`
+Connects to the upstream [Archpilot Standards Library](https://github.com/gauravs19/archpilot) to search for specific architectural rules right from your terminal.
+```bash
+archpilot rules "security"
+```
+
+---
+
+## üèóÔ∏è The Spec-Driven Workflow
+
+1. Run `archpilot init` in your project.
+2. Run `archpilot new spec` to write out exactly **what** the business needs.
+3. Run `archpilot new design` to define **how** it will be built.
+4. Pass both files to Claude, Cursor, or Copilot to generate the code. 
+5. The LLM stays bounded, compliant, and architecturally sound.
+
+---
+
+## ü§ù Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/gauravs19/archpilot-cli/issues).
+
+## üìÑ License
+This project is [MIT](https://github.com/gauravs19/archpilot-cli/blob/master/LICENSE) licensed. Built by [Gaurav Sharma](https://gauravs19.github.io/portfolio/).
