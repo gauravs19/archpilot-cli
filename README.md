@@ -105,3 +105,13 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📄 License
 This project is [MIT](https://github.com/gauravs19/archpilot-cli/blob/master/LICENSE) licensed. Built by [Gaurav Sharma](https://gauravs19.github.io/portfolio/).
+
+
+---
+
+## Ecosystem
+
+| Tool | Description |
+|---|---|
+| [archpilot](https://github.com/gauravs19/archpilot) | The Enterprise Architecture Standards Library powering this CLI |
+| [archpilot-reviewer](https://github.com/gauravs19/archpilot-reviewer) | GitHub Action for automated architecture governance on PRs |
